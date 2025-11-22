@@ -26,9 +26,13 @@ body {
     justify-content: space-between;
 
 }
+
+#myForm{
+    width: 430px;
+}
 .search input{
     height: 15px;
-    width: 270px;
+    width: 338px;
     border: 0;
     outline: 0;
     border-radius: 30px;

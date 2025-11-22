@@ -44,7 +44,7 @@ const imageChange = (data) => {
 
 };
 
-btn.addEventListener("click", async () => {
+async function showingWeather(e) {
   let val = input.value;
   let response = await fetch(MAIN_URL + `&q=${val}`);
   let data = await response.json();
@@ -57,4 +57,17 @@ btn.addEventListener("click", async () => {
   }
 
   imageChange(data);
+};
+
+btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    showingWeather(e);
+})
+
+input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        console.log("key has been pressed");
+        showingWeather();
+    }
 });
